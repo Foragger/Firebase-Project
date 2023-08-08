@@ -53,15 +53,28 @@
     <!--TOP BAR-->
     <div class="topnav">
       <h1>Sensor Readings App <i class="fas fa-clipboard-list"></i></h1>
+      <!--AUTHENTICATION BAR (USER DETAILS/LOGOUT BUTTON)-->
+      <div id="authentication-bar" style="display: none">
+        <div id="bar">
+          <div id="system-buttons">
+            <button type="button" class="button">Sistema 1</button>
+            <button type="button" class="button">Sistema 2</button>
+            <button type="button" class="button">Sistema 3</button>
+            <button type="button" class="button">Sistema 4</button>
+            <button type="button" class="button">Sistema 5</button>
+            <button type="button" class="button">Sistema 6</button>
+            
+          </div>
+          <p>
+            <span id="authentication-status">User logged in</span>
+            <span id="user-details">USEREMAIL</span>
+            <a href="/" id="logout-link">(logout)</a>
+          </p>
+        </div>
+        
+      </div>  
     </div>
 
-    <!--AUTHENTICATION BAR (USER DETAILS/LOGOUT BUTTON)-->
-    <div id="authentication-bar" style="display: none;">
-      <p><span id="authentication-status">User logged in</span>
-        <span id="user-details">USEREMAIL</span>
-        <a href="/" id="logout-link">(logout)</a>
-      </p>
-    </div>
 
     <!--LOGIN FORM-->
     <form id="login-form" style="display: none;">
@@ -84,7 +97,7 @@
       <p><span class ="date-time">Last update: <span id="lastUpdate"></span></span></p>
       <p>
         Cards: <input type="checkbox" id="cards-checkbox" name="cards-checkbox" checked>
-        Gauges: <input type="checkbox" id="gauges-checkbox" name="gauges-checkbox" checked>
+        Gauges: <input type="checkbox" id="gauges-checkbox" name="gauges-checkbox" unchecked>
         Charts: <input type="checkbox" id="charts-checkbox" name="charts-checkbox" unchecked>
       </p>
       <div id="cards-div">
@@ -107,7 +120,7 @@
         </div>
       </div>
       <!--GAUGES-->
-      <div id ="gauges-div">
+      <div id ="gauges-div" style="display:none">
         <div class="cards">
           <!--TEMPERATURE-->
           <div class="card">
