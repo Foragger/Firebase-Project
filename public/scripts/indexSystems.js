@@ -48,6 +48,7 @@ const chartsCheckboxElement = document.querySelector('input[name=charts-checkbox
 const cardsReadingsElement = document.querySelector("#cards-div");
 const gaugesReadingsElement = document.querySelector("#gauges-div");
 const chartsDivElement = document.querySelector('#charts-div');
+const systemName = document.getElementById("");
 const tempElement = document.getElementById("temp");
 const humElement = document.getElementById("hum");
 const presElement = document.getElementById("pres");
