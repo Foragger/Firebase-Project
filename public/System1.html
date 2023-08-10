@@ -57,13 +57,9 @@
       <div id="authentication-bar" style="display: none">
         <div id="bar">
           <div id="system-buttons">
-            <button type="button" class="button">Sistema 1</button>
-            <button type="button" class="button">Sistema 2</button>
-            <button type="button" class="button">Sistema 3</button>
-            <button type="button" class="button">Sistema 4</button>
-            <button type="button" class="button">Sistema 5</button>
-            <button type="button" class="button">Sistema 6</button>
-            
+            <button type="button" class="button" onclick="redirectToPage('index.html')">Home</button>
+            <button type="button" class="button" onclick="redirectToPage('System1.html')">Sistema 1</button>
+            <button type="button" class="button" onclick="redirectToPage('System2.html')">Sistema 2</button>
           </div>
           <p>
             <span id="authentication-status">User logged in</span>
@@ -205,6 +201,12 @@
     <script src="scripts/charts-definition.js"></script>
     <script src="scripts/gauges-definition.js"></script>
     <script src="scripts/indexSystems.js"></script>
+    <script>
+      function redirectToPage(page) {
+          // Redirige a la página especificada
+          window.location.href = page;
+      }
+    </script>
 
   </body>
 
