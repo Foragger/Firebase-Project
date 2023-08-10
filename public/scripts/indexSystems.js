@@ -12,7 +12,6 @@ function epochToDateTime(epochTime){
     ("00" + epochDate.getHours()).slice(-2) + ":" +
     ("00" + epochDate.getMinutes()).slice(-2) + ":" +
     ("00" + epochDate.getSeconds()).slice(-2);
-
   return dateTime;
 }
 
@@ -48,7 +47,6 @@ const chartsCheckboxElement = document.querySelector('input[name=charts-checkbox
 const cardsReadingsElement = document.querySelector("#cards-div");
 const gaugesReadingsElement = document.querySelector("#gauges-div");
 const chartsDivElement = document.querySelector('#charts-div');
-const systemName = document.getElementById("");
 const tempElement = document.getElementById("temp");
 const humElement = document.getElementById("hum");
 const presElement = document.getElementById("pres");
@@ -68,9 +66,27 @@ const setupUI = (user) => {
     var uid = user.uid;
     console.log(uid);
 
+
+    //Get system paths
+
+    const currentPath = window.location.pathname.split('/').pop();
+
+
+    // Define una variable para el path del sistema
+    let systemPath;
+
+    // Compara la parte de la URL con posibles valores y asigna el systemPath correspondiente
+    if (currentPath === 'System1.html') {
+        systemPath = '/system-1';
+    } else if (currentPath === 'System2.html') {
+        systemPath = '/system-2';
+    } else {
+        // Manejar cualquier otro caso si es necesario
+    }
+
     // Database paths (with user UID)
-    var dbPath = 'UsersData/' + uid.toString() + '/system-1/readings';
-    var chartPath = 'UsersData/' + uid.toString() + '/system-1/charts/range';
+    var dbPath = 'UsersData/' + uid.toString() + systemPath + '/readings';
+    var chartPath = 'UsersData/' + uid.toString() + systemPath +  '/charts/range';
 
     // Database references
     var dbRef = firebase.database().ref(dbPath);
