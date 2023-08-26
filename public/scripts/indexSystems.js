@@ -80,9 +80,11 @@ const setupUI = (user) => {
         systemPath = '/system-1';
     } else if (currentPath === 'System2.html') {
         systemPath = '/system-2';
-    } else {
-        // Manejar cualquier otro caso si es necesario
+    } else  if (currentPath === 'System3.html') {
+      systemPath = '/system-3';
     }
+    else{}
+    // Manejar cualquier otro caso si es necesario
 
     // Database paths (with user UID)
     var dbPath = 'UsersData/' + uid.toString() + systemPath + '/readings';
